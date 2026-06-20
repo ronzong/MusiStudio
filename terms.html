@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - MUSI FASHION SHOP CO</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-shadow-lg {
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            }
+            .bg-gradient {
+                background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+            }
+            .transition-transform {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.05);
+            }
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: url('imgs/bg.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .game-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .game-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Musi Studio</a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="nav-link font-medium hover:text-primary transition-colors">Home</a>
+                <a href="index.html#games" class="nav-link font-medium hover:text-primary transition-colors">Games</a>
+                <a href="index.html#about" class="nav-link font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="index.html#contact" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
+                <a href="terms.html" class="nav-link font-medium text-primary transition-colors">Terms</a>
+                <a href="privacy.html" class="nav-link font-medium hover:text-primary transition-colors">Privacy</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-dark focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html#home" class="font-medium hover:text-primary transition-colors py-2">Home</a>
+                <a href="index.html#games" class="font-medium hover:text-primary transition-colors py-2">Games</a>
+                <a href="index.html#about" class="font-medium hover:text-primary transition-colors py-2">About Us</a>
+                <a href="index.html#contact" class="font-medium hover:text-primary transition-colors py-2">Contact</a>
+                <a href="terms.html" class="font-medium text-primary transition-colors py-2">Terms</a>
+                <a href="privacy.html" class="font-medium hover:text-primary transition-colors py-2">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms of Service Section -->
+    <section class="py-20 bg-gray-50 pt-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Terms of Service</h2>
+            <p class="text-center text-gray-500 mb-12">Last Updated: April 29, 2026</p>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <div class="content">
+                    <h3 class="text-xl font-bold mb-4 mt-8">1. Terms</h3>
+                    <p class="mb-6">By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">2. Use License</h3>
+                    <p class="mb-6">Permission is granted to temporarily download one copy of the materials (information or software) on MUSI FASHION SHOP CO's web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                    <ul class="list-disc pl-5 mb-6 space-y-2">
+                        <li>modify or copy the materials;</li>
+                        <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                        <li>attempt to decompile or reverse engineer any software contained on MUSI FASHION SHOP CO's web site;</li>
+                        <li>remove any copyright or other proprietary notations from the materials; or</li>
+                        <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                    </ul>
+                    <p class="mb-6">This license shall automatically terminate if you violate any of these restrictions and may be terminated by MUSI FASHION SHOP CO at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">3. Disclaimer</h3>
+                    <p class="mb-6">The materials on MUSI FASHION SHOP CO's web site are provided "as is". MUSI FASHION SHOP CO makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">4. Limitations</h3>
+                    <p class="mb-6">In no event shall MUSI FASHION SHOP CO or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on MUSI FASHION SHOP CO's Internet web site, even if MUSI FASHION SHOP CO or a MUSI FASHION SHOP CO authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">5. Revisions and Errata</h3>
+                    <p class="mb-6">The materials appearing on MUSI FASHION SHOP CO's web site could include technical, typographical, or photographic errors. MUSI FASHION SHOP CO does not warrant that any of the materials on its web site are accurate, complete, or current. MUSI FASHION SHOP CO may make changes to the materials contained on its web site at any time without notice. MUSI FASHION SHOP CO does not, however, make any commitment to update the materials.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">6. Links</h3>
+                    <p class="mb-6">MUSI FASHION SHOP CO has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by MUSI FASHION SHOP CO of the site. Use of any such linked web site is at the user's own risk.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">7. Site Terms of Use Modifications</h3>
+                    <p class="mb-6">MUSI FASHION SHOP CO may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">8. Governing Law and Jurisdiction</h3>
+                    <p class="mb-6">These general terms and conditions shall be governed by and construed in accordance with the laws of Australia without reference to any principles of conflicts of law. The Users and the parties hereto hereby irrevocably submit to the exclusive jurisdiction of the competent courts of Australia any dispute arising in connection with these general terms and conditions.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">Contact Us</h3>
+                    <p class="mb-4">Email: <a href="mailto:contact@musistudio.top" class="text-primary hover:underline">contact@musistudio.top</a></p>
+                    <p class="mb-6">Address: UNIT E,F,G & H, 2FLR, PACO MALL, 1220 PEDRO GIL ST. CORNER ANGEL LINAO ST, BARANGAY 673, PACO, NCR, CITY OF MANILA, FIRST DISTRICT, Philippines</p>
+                </div>
+                
+                <div class="mt-8 text-center text-gray-600">
+                    <p>&copy; 2025 MUSI FASHION SHOP CO. All rights reserved.</p>
+                    <p class="mt-2">Contact: <a href="mailto:contact@musistudio.top" class="text-primary hover:underline">contact@musistudio.top</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-white">Musi Studio</a>
+                    <p class="mt-2 text-gray-400">Where Imagination Meets Innovation</p>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 MUSI FASHION SHOP CO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

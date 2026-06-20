@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Musi Studio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-shadow-lg {
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            }
+            .bg-gradient {
+                background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+            }
+            .transition-transform {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.05);
+            }
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: url('imgs/bg.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .game-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .game-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Musi Studio</a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="nav-link font-medium hover:text-primary transition-colors">Home</a>
+                <a href="index.html#games" class="nav-link font-medium hover:text-primary transition-colors">Games</a>
+                <a href="index.html#about" class="nav-link font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="index.html#contact" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
+                <a href="terms.html" class="nav-link font-medium hover:text-primary transition-colors">Terms</a>
+                <a href="privacy.html" class="nav-link font-medium text-primary transition-colors">Privacy</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-dark focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html#home" class="font-medium hover:text-primary transition-colors py-2">Home</a>
+                <a href="index.html#games" class="font-medium hover:text-primary transition-colors py-2">Games</a>
+                <a href="index.html#about" class="font-medium hover:text-primary transition-colors py-2">About Us</a>
+                <a href="index.html#contact" class="font-medium hover:text-primary transition-colors py-2">Contact</a>
+                <a href="terms.html" class="font-medium hover:text-primary transition-colors py-2">Terms</a>
+                <a href="privacy.html" class="font-medium text-primary transition-colors py-2">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Section -->
+    <section class="py-20 bg-gray-50 pt-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Privacy Policy</h2>
+            <p class="text-center text-gray-500 mb-12">Last Updated: June 7, 2026</p>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <div class="content">
+                    <p class="mb-6">MUSI FASHION SHOP CO ("we," "us," or "our") respects your privacy. This Privacy Policy explains how we collect, use, store, transfer, and disclose your personal data in connection with our mobile games and related services.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">Information We Collect</h3>
+                    <p class="mb-6">In addition, we create a unique user ID to track your use of our Service. This unique user ID is stored in connection with your profile information to track the MUSI FASHION SHOP CO games you are playing.</p>
+                    <p class="mb-6">We may occasionally send you push notifications through our mobile applications to send you game updates, high scores and other service related notifications that may be of importance to you. You may at any time opt-out from receiving these types of communications by turning them off at the device level through your settings.</p>
+                    <p class="mb-6">We may collect non-personal information about you through our Service. Such information may include your operating system type and version, and the time and date of your visit to the Service.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">How We Use Your Information</h3>
+                    <p class="mb-6">MUSI FASHION SHOP CO's primary goals in using your information are to create your account, provide Services to you, troubleshoot, improve and optimize our Services, contact you, conduct research and create reports for internal use. We use information collected through our Service for purposes described in this Policy or disclosed to you in connection with our Service. For example, we may use your information to:</p>
+                    <ul class="list-disc pl-5 mb-6 space-y-2">
+                        <li>Create game accounts and allow users to play our games;</li>
+                        <li>Identify and suggest connections with other MUSI FASHION SHOP CO users;</li>
+                        <li>Operate and improve our Services;</li>
+                        <li>Understand you and your preferences to enhance your experience and enjoyment using our Services;</li>
+                        <li>Respond to your comments and questions and provide customer service;</li>
+                        <li>Provide and deliver products and services you request;</li>
+                        <li>Deliver advertising and marketing and promotional information to you;</li>
+                        <li>Send you related information, including confirmations, invoices, technical notices, updates, security alerts, and support and administrative messages;</li>
+                        <li>Communicate with you about promotions, contests, rewards, upcoming events, and other news about products and services offered by MUSI FASHION SHOP CO and our selected partners;</li>
+                        <li>Conduct and administer contests promoted by MUSI FASHION SHOP CO;</li>
+                        <li>Enable you to communicate with other users; and</li>
+                        <li>Link or combine it with other information we get from third parties, to help understand your preferences and provide you with better services.</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">Use of Your Information by Others</h3>
+                    <p class="mb-6">The privacy policies of our service providers may include additional terms and disclosures regarding their data collection and use practices and tracking technologies, and we encourage you to check those privacy policies to learn more about their data collection and use practices, use of cookies and other similar tracking technologies.</p>
+                    <p class="mb-6">Advertising. To the extent we display advertising in our Services, we may allow advertising networks of our affiliates and partner networks to collect information about your mobile device to enable them to serve targeted ads to you. Such mobile device data includes the following:</p>
+                    <ul class="list-disc pl-5 mb-6 space-y-2">
+                        <li>Device make, model and operating system;</li>
+                        <li>Device properties related to screen size & orientation, audio volume and battery;</li>
+                        <li>Carrier;</li>
+                        <li>Operating system;</li>
+                        <li>Name and properties of mobile application through which a consumer interacts with the Services;</li>
+                        <li>Country, time zone and locale settings (country and preferred language);</li>
+                        <li>Network connection type and speed;</li>
+                        <li>IP Address;</li>
+                        <li>Internet browser user-agent used to access the Services; and</li>
+                        <li>Identifier for advertisers (IDFA).</li>
+                    </ul>
+                    <p class="mb-6">The privacy policies of our partners may include additional terms and disclosures regarding their data collection and use practices and tracking technologies, and we encourage you to check those privacy policies to learn more about their data collection and use practices, use of cookies and other similar tracking technologies.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">How We May Disclose Your Information to Third Parties</h3>
+                    <p class="mb-6">MUSI FASHION SHOP CO does not share your personal information except as approved by you or as described herein.</p>
+                    <p class="mb-6">We may share information we collect or derive with third parties for the following purposes:</p>
+                    <ul class="list-disc pl-5 mb-6 space-y-2">
+                        <li>With service providers that perform services on our behalf, including the ones referenced above under "Third Party Services";</li>
+                        <li>With our affiliates;</li>
+                        <li>For analytics and research purposes;</li>
+                        <li>In response to subpoenas, court orders, or other legal processes;</li>
+                        <li>To protect our or a third party's legal rights, investigate fraud, or to defend against a legal claim;</li>
+                        <li>As part of a business transfer such as a merger, acquisition, or at bankruptcy;</li>
+                        <li>We may share aggregate or anonymous information about you with advertisers, publishers, business partners, sponsors, and other third parties; and</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">Specific Provisions for EU Individuals</h3>
+                    <p class="mb-6">Withdrawing Your Consent. Contact us if you would like to withdraw your consent to the processing of your personal data. Exercising this right will not affect the lawfulness of processing based on consent before withdrawal.</p>
+                    <p class="mb-6">Erasing or Restricting Access to Your Information. You may request to delete or restrict access to your personal data. We may postpone or deny your request if your personal data is in current use for providing Services or for other legitimate purposes, in which case we will let you know if we are unable to do so and why.</p>
+                    <p class="mb-6">Transferring your Personal Data (Otherwise known as Your Right to Data Portability). You have the right to receive your personal data that you have provided us in a structured, commonly used and machine readable format and the right to transmit that data to another party of your choice, where technically feasible. However, this right shall not apply where it would adversely affect the rights and freedoms of others.</p>
+                    
+                    <h3 class="text-xl font-bold mb-4 mt-8">Contact Us</h3>
+                    <p class="mb-4">MUSI FASHION SHOP CO</p>
+                    <p class="mb-4">Email: <a href="mailto:contact@musistudio.top" class="text-primary hover:underline">contact@musistudio.top</a></p>
+                    <p class="mb-6">Address: UNIT E,F,G & H, 2FLR, PACO MALL, 1220 PEDRO GIL ST. CORNER ANGEL LINAO ST, BARANGAY 673, PACO, NCR, CITY OF MANILA, FIRST DISTRICT, Philippines</p>
+                </div>
+                
+                <div class="mt-8 text-center text-gray-600">
+                    <p>&copy; 2025 MUSI FASHION SHOP CO. All rights reserved.</p>
+                    <p class="mt-2">Contact: <a href="mailto:contact@musistudio.top" class="text-primary hover:underline">contact@musistudio.top</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-white">Musi Studio</a>
+                    <p class="mt-2 text-gray-400">Where Imagination Meets Innovation</p>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 MUSI FASHION SHOP CO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
