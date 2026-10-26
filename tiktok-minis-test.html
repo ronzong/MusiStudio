@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>打开 Arrow Puzzle Go</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 15vh auto; padding: 24px; text-align: center; color: #202124; }
+    a { display: inline-block; padding: 14px 24px; background: #111; color: white; border-radius: 10px; text-decoration: none; }
+    p { line-height: 1.7; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Arrow Puzzle Go</h1>
+  <p>正在尝试打开 TikTok……<br>如果没有自动打开，请点击下方按钮。</p>
+  <a id="open">在 TikTok 中打开</a>
+  <p>请在已安装 TikTok 的手机上测试。</p>
+  <script>
+    const deeplink = 'snssdk1233://minis/mgavxwaeka84qpuf/prod?_tiktok_minis_params=%7B%22minis_name%22%3A%22Arrow+Puzzle+Go%22%2C%22minis_icon%22%3A%22https%3A%2F%2Fp16-tt4dportal-sign-sg.tiktokcdn.com%2Ftos-alisg-i-tt4dportal-sg%2F654c9b67507a78d24b1c198590afa697~tplv-tt4dportal-image.jpeg%3Flk3s%3Db61e653d%5Cu0026x-expires%3D1793088228%5Cu0026x-signature%3DSPpdACAD6Crtib8rD9Hjo%252B5RZdc%253D%22%2C%22enter_from%22%3A%22minis_link%22%2C%22parse_link_scene%22%3A%22default%22%2C%22parse_link_token%22%3A%22D0rTeyV54jj%22%2C%22minis_category%22%3A%22mini_game%22%2C%22log_extra%22%3A%7B%22parse_link_scene%22%3A%22default%22%2C%22parse_link_token%22%3A%22D0rTeyV54jj%22%7D%2C%22ttmg_init_module%22%3A%22__GAME__%22%7D&from=Fr5F5tF4';
+    document.getElementById('open').href = deeplink;
+    window.addEventListener('load', () => {
+      window.location.href = deeplink;
+    }, { once: true });
+  </script>
+</body>
+</html>
