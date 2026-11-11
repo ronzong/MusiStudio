@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Arrow Puzzle Go</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 15vh auto; padding: 24px; text-align: center; color: #202124; }
+    a { display: inline-block; padding: 14px 24px; background: #111; color: white; border-radius: 10px; text-decoration: none; }
+    p { line-height: 1.7; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Ash Survivor</h1>
+  <p>Opening TikTok...<br>If TikTok does not open automatically, tap the button below.</p>
+  <a id="open">Open in TikTok</a>
+  <p></p>
+  <script>
+    const deeplink = 'snssdk1233://minis/mguatp61hspdrbqe/prod?_tiktok_minis_params=%7B%22minis_name%22%3A%22SurvivorGame%22%2C%22minis_icon%22%3A%22https%3A%2F%2Fp16-tt4dportal-sign-sg.tiktokcdn.com%2Ftos-alisg-i-tt4dportal-sg%2Ffa6bbc176c9d88905904bce32d0ab216~tplv-tt4dportal-image.jpeg%3Frk3s%3D1d102dfc%5Cu0026x-expires%3D1794485943%5Cu0026x-signature%3DKwuZnGa8saITP0khcbcqWiPESq4%253D%22%2C%22enter_from%22%3A%22minis_link%22%2C%22parse_link_scene%22%3A%22default%22%2C%22parse_link_token%22%3A%226C58IJJ3qkj%22%2C%22minis_category%22%3A%22mini_game%22%2C%22log_extra%22%3A%7B%22parse_link_scene%22%3A%22default%22%2C%22parse_link_token%22%3A%226C58IJJ3qkj%22%7D%2C%22ttmg_init_module%22%3A%22__GAME__%22%7D&from=Fr5F5tF4';
+    document.getElementById('open').href = deeplink;
+    window.addEventListener('load', () => {
+      window.location.href = deeplink;
+    }, { once: true });
+  </script>
+</body>
+</html>
